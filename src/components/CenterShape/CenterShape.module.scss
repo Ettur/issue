@@ -1,0 +1,66 @@
+.center-shape-container {
+    @include absolute-center;
+    transform: translate(0);
+    transition: all;
+}
+
+.center-shape-mobile-transform {
+    transition-delay: 750ms;
+
+    @media screen and (max-width: $breakpoint-md) {
+        transform: translateY(200px);
+    }
+}
+
+.center-shape-wrapper {
+    position: relative;
+}
+
+.center-shape-box-first {
+    @include center-shape-box(translate(-50%, -50%));
+}
+
+.center-shape-box-second {
+    @include center-shape-box(translate(-50%, -50%) rotate(45deg));
+    cursor: pointer;
+    transition: $app-main-transition;
+}
+
+.rotate-360 {
+    transform: translate(-50%, -50%) rotate(495deg);
+}
+
+.x-axis {
+    @include center-shape-crosshair-axes(translateX(-50%) scaleX(0.99), 100vw);
+}
+
+.y-axis {
+    @include center-shape-crosshair-axes(translateX(-50%) rotate(-90deg) scaleX(0.99), 100vh, 2px, to right);
+}
+
+.hide-x-axis {
+    transform: translateX(-50%) scaleX(0)
+}
+
+.hide-y-axis {
+    transform: translateX(-50%) rotate(-90deg) scaleX(0)
+}
+
+.circle {
+    $boxSize: 22px;
+    position: absolute;
+    border: 1px solid orange;
+    transform: translate(-50%, -50%);
+    width: $boxSize;
+    height: $boxSize;
+    border-radius: 50vmin;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.x-axis-endpoint {
+    width: 25px;
+    position: absolute;
+    transform: translate(-50%) rotate(90deg);
+    background-color: $site-secondary-color;
+}

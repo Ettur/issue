@@ -1,0 +1,85 @@
+@mixin header-footer-style {
+    height: 50px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: $font-small;
+    position: relative;
+}
+
+@mixin absolute-center($zindex: 0) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: $zindex;
+}
+
+@mixin center-shape-box($transform, $shapeSize: 45px) {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(207, 207, 207);
+    background-color: $site-background-color;
+    width: $shapeSize;
+    height: $shapeSize;
+    transform: $transform;
+    border-radius: 1px;
+}
+
+@mixin center-shape-crosshair-axes($transform, $width, $height: 1px, $direction: to right) {
+    border: none;
+    position: absolute;
+    width: $width;
+    background-image: linear-gradient(45deg,
+            hsl(0deg 0% 4%) 0%,
+            hsl(344deg 0% 12%) 11%,
+            hsl(344deg 0% 19%) 20%,
+            hsl(344deg 0% 27%) 27%,
+            hsl(344deg 0% 35%) 34%,
+            hsl(344deg 0% 44%) 39%,
+            hsl(344deg 0% 53%) 43%,
+            hsl(344deg 0% 62%) 46%,
+            hsl(344deg 0% 71%) 48%,
+            hsl(344deg 0% 80%) 50%,
+            hsl(344deg 0% 90%) 51%,
+            hsl(0deg 0% 100%) 51%,
+            hsl(344deg 0% 90%) 52%,
+            hsl(344deg 0% 80%) 53%,
+            hsl(344deg 0% 71%) 54%,
+            hsl(344deg 0% 62%) 56%,
+            hsl(344deg 0% 53%) 58%,
+            hsl(344deg 0% 44%) 61%,
+            hsl(344deg 0% 35%) 66%,
+            hsl(344deg 0% 27%) 72%,
+            hsl(344deg 0% 19%) 80%,
+            hsl(344deg 0% 12%) 89%,
+            hsl(0deg 0% 4%) 100%);
+    height: $height;
+    transform: $transform;
+    z-index: 0;
+    overflow: hidden;
+    transition: all 500ms ease-out;
+}
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin generic-main-content-container {
+    width: 100%;
+    height: 100%;
+    padding: clamp(0px, 2vw, 100px) 0;
+}
+
+@mixin transition-delay-4-children {
+    @for $i from 1 through 4 {
+        &:nth-child(#{$i}) {
+            transition-delay: #{($i - 1) * 100}ms;
+        }
+    }
+}

@@ -1,0 +1,29 @@
+.FX-container {
+    @include generic-main-content-container;
+    font-size: clamp(15px, 1.5vw, 16px);
+}
+
+.FX-text-container {
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.FX-text-title {
+    font-family: "Inter Tight", sans-serif;
+    font-weight: 600;
+    font-size: clamp(68px, 8vw, 80px);
+    transition: transform 500ms ease-in-out;
+    transform: translateX(-100%);
+}
+
+.FX-text {
+    transition: $app-main-transition;
+    line-height: 1.4;
+    transform: translateX(-100%);
+}
+
+.translate-x-0 {
+    transform: translateX(0);
+}

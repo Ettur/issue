@@ -1,0 +1,14 @@
+.headerContainer {
+    @include header-footer-style;
+}
+
+.header-footer-text-container {
+    @include absolute-center;
+    height: 100%;
+}
+
+.headerText {
+    position: relative;
+    height: 100%;
+    @include flex-center;
+}

@@ -1,0 +1,19 @@
+// Colors
+$site-main-color: #fff;
+$site-background-color: #0b0b0b;
+$site-secondary-color: #8f8f90;
+
+// Font sizes
+$font-small: 13px;
+$font-title-l: 35px;
+$font-title-xl: 65px;
+$font-title-xxl: 75px;
+
+// Padding / Margin
+$app-outer-padding: clamp(20px, 4vw, 60px);
+
+// Transitions
+$app-main-transition: all 200ms ease-in-out;
+
+// Breakpoints
+$breakpoint-md: 768px;

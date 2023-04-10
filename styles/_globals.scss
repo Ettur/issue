@@ -1,0 +1,48 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  font-family: "Inconsolata", sans-serif, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+    Helvetica Neue;
+  background-color: $site-background-color;
+  color: $site-main-color;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  margin: auto 0;
+}
+
+// a::after {
+//   content: "";
+//   position: absolute;
+//   width: 100%;
+//   border-bottom: 1px solid $site-main-color;
+//   bottom: 0;
+//   left: 0;
+//   transform: translateX(-101%);
+//   transition: 300ms ease-in-out;
+// }
+
+a:hover:after {
+  transform: translateX(0);
+}
+
+.app-container {
+  display: flex;
+  width: 100%;
+  min-height: 100%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 0 $app-outer-padding;
+}
